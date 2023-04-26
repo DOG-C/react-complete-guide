@@ -62,12 +62,32 @@ const ExpenseForm = (props) => {
     // });
   };
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
+
+    // 使得在点击Add Expense按钮之后，输入被清空为没有输入的状态。
+    // 此处对应的要在标签内添加value={对应值}，比如 value={enteredTitle}
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} />
+          <input
+            type="text"
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -75,6 +95,7 @@ const ExpenseForm = (props) => {
             type="number"
             min="0.01"
             step="0.01"
+            value={enteredAmount}
             onChange={amountChangeHandler}
           />
         </div>
@@ -84,6 +105,7 @@ const ExpenseForm = (props) => {
             type="date"
             min="2022-01-01"
             max="2024-12-31"
+            value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>
