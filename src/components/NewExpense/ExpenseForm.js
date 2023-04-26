@@ -71,6 +71,9 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
 
+    // 来自上一层的NewExpense标签内，这是非常重要的组件间通信方式
+    props.onSaveExpenseData(expenseData);
+
     // 使得在点击Add Expense按钮之后，输入被清空为没有输入的状态。
     // 此处对应的要在标签内添加value={对应值}，比如 value={enteredTitle}
     setEnteredTitle("");
