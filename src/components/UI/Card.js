@@ -1,6 +1,6 @@
 import './Card.css'
 
-function Card(props){
+const Card = (props) =>{
     const classes = 'card ' + props.className; //空格很重要
 
     return <div className={classes}>{props.children}</div>;
