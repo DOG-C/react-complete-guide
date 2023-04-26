@@ -3,39 +3,63 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
-  //   const [enteredTitle, setEnteredTitle] = useState("");
-  //   const [enteredAmount, setEnteredAmount] = useState("");
-  //   const [enteredDate, setEnteredDate] = useState("");
+  // 多个状态切片完成
+    const [enteredTitle, setEnteredTitle] = useState("");
+    const [enteredAmount, setEnteredAmount] = useState("");
+    const [enteredDate, setEnteredDate] = useState("");
 
-  //只用一个状态完成
-  const [userInput, setUserInput] = useState({
-    enteredTitle: '',
-    enteredAmount: '',
-    enteredDate: '',
-  });
+  // 只用一个状态完成
+//   const [userInput, setUserInput] = useState({
+//     enteredTitle: "",
+//     enteredAmount: "",
+//     enteredDate: "",
+//   });
 
   const titleChangeHandler = (event) => {
-    // setEnteredTitle(event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredTitle: event.target.value
-    });
+    // 多个状态切片的设置方法
+    setEnteredTitle(event.target.value);
+
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value
+    // });
+
+    // 确保是最新状态的快照，上面的方法有可能不是最新的
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enteredTitle: event.target.value };
+    // });
   };
 
   const amountChangeHandler = (event) => {
-    // setEnteredAmount(event.target.value);
-    setUserInput({
-        ...userInput,
-        enteredAmount: event.target.value
-      });
+    // 多个状态切片的设置方法
+    setEnteredAmount(event.target.value);
+
+    // 一个状态的设置方法
+    // setUserInput({
+    //     ...userInput,
+    //     enteredAmount: event.target.value
+    //   });
+
+    // 确保是最新状态的快照，上面的方法有可能不是最新的
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enteredAmount: event.target.value };
+    // });
   };
 
   const dateChangeHandler = (event) => {
-    // setEnteredDate(event.target.value);
-    setUserInput({
-        ...userInput,
-        enteredDate: event.target.value
-      });
+    // 多个状态切片的设置方法
+    setEnteredDate(event.target.value);
+
+    // 一个状态的设置方法
+    // setUserInput({
+    //     ...userInput,
+    //     enteredDate: event.target.value
+    //   });
+    
+    // 确保是最新状态的快照，上面的方法有可能不是最新的
+    // setUserInput((prevState) => {
+    //     return { ...prevState, enteredDate: event.target.value};
+    // });
   };
 
   return (
