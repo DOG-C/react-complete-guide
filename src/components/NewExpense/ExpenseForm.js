@@ -9,9 +9,9 @@ const ExpenseForm = (props) => {
 
   //只用一个状态完成
   const [userInput, setUserInput] = useState({
-    enteredTitle: "",
-    enteredAmount: "",
-    enteredDate: "",
+    enteredTitle: '',
+    enteredAmount: '',
+    enteredDate: '',
   });
 
   const titleChangeHandler = (event) => {
