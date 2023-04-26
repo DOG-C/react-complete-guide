@@ -4,16 +4,16 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
   // 多个状态切片完成
-    const [enteredTitle, setEnteredTitle] = useState("");
-    const [enteredAmount, setEnteredAmount] = useState("");
-    const [enteredDate, setEnteredDate] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
-  // 只用一个状态完成
-//   const [userInput, setUserInput] = useState({
-//     enteredTitle: "",
-//     enteredAmount: "",
-//     enteredDate: "",
-//   });
+  //   只用一个状态完成
+  //   const [userInput, setUserInput] = useState({
+  //     enteredTitle: "",
+  //     enteredAmount: "",
+  //     enteredDate: "",
+  //   });
 
   const titleChangeHandler = (event) => {
     // 多个状态切片的设置方法
@@ -55,7 +55,7 @@ const ExpenseForm = (props) => {
     //     ...userInput,
     //     enteredDate: event.target.value
     //   });
-    
+
     // 确保是最新状态的快照，上面的方法有可能不是最新的
     // setUserInput((prevState) => {
     //     return { ...prevState, enteredDate: event.target.value};
