@@ -6,6 +6,8 @@ function App() {
     <div>
       <h1>Get start!</h1>
       <ExpenseItem></ExpenseItem>
+      <ExpenseItem></ExpenseItem>
+      <ExpenseItem></ExpenseItem>
     </div>
   );
 }
