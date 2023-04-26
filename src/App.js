@@ -38,7 +38,11 @@ function App() {
   return (
     <div>
       <h1>Get start!</h1>
-      <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} date={expenses[0].date} ></ExpenseItem>
+      <ExpenseItem
+        title={expenses[0].title}
+        amount={expenses[0].amount}
+        date={expenses[0].date}
+      />
     </div>
   );
 }
