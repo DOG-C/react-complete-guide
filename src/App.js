@@ -26,7 +26,7 @@ const App = () => {
     },
   ];
 
-  const addExpenseHandler = (expense) = {
+  const addExpenseHandler = (expense) => {
     
   };
 
