@@ -21,7 +21,7 @@ const Expenses = (props) => {
         />
         {props.items.map((item) => (
           <ExpenseItem
-            key={item.id}
+            key={item.id} //很重要，可以让React Dom是识别唯一需要更新的项，每次加上就好
             title={item.title}
             amount={item.amount}
             date={item.date}
