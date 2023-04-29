@@ -12,6 +12,11 @@ const Expenses = (props) => {
     setFilteredYear(selectedYear);
   };
 
+  const filteredExpenses = props.items.filter(item => {
+    return item.date.getFullYear().toString() === filteredYear;
+
+  });
+
   return (
     <div>
       <Card className="expenses">
@@ -19,7 +24,7 @@ const Expenses = (props) => {
           selected={filteredYear}
           onFilterChange={filterChangeHandler}
         />
-        {props.items.map((item) => (
+        {filteredExpenses.map((item) => (
           <ExpenseItem
             key={item.id} //很重要，可以让React Dom是识别唯一需要更新的项，每次加上就好
             title={item.title}
